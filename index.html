@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--css fontawesome-->
+    <link rel="stylesheet" href="./assets/fontawesome/all.min.css" />
+    <!--css bootstrap-->
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
+    <!--css wow ainmate-->
+    <link rel="stylesheet" href="./assets/wow/animate.css" />
+    <link rel="stylesheet" href="./assets/wow/animate.min.css" />
+    <!--css owl ainmate-->
+    <link rel="stylesheet" href="./assets/owl/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/owl/owl.theme.default.min.css" />
+    <!--my css-->
+    <link rel="stylesheet" href="./assets/css/main.css" id="link" />
+    <title>Password Validation Check</title>
+  </head>
+  <body>
+    <div class="load">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <section class="section1">
+      <div class="body">
+        <div class="div_user">
+          <input type="text" id="text" placeholder="Username" />
+          <div class="alert alert-danger" id="alt1" role="alert">
+            -- Please enter Username!
+          </div>
+        </div>
+        <div class="div_pass">
+          <input
+            type="password"
+            id="inp"
+            placeholder="Password"
+            onkeyup="test(this.value)"
+          />
+          <div class="alert alert-danger" id="alt2" role="alert">
+            -- Please enter Password!
+          </div>
+          <span class="toggle"><i class="fa-solid fa-eye"></i></span>
+        </div>
+      </div>
+      <div class="divbtn">
+        <button id="btn">Clic Her</button>
+      </div>
+      <div class="req" id="req">
+        <ul>
+          <li id="lower" class="">At least one lowercase character</li>
+          <li id="upper" class="">At least one uppercase character</li>
+          <li id="number" class="">At least one number</li>
+          <li id="special" class="">At least one special character</li>
+          <li id="eight" class="">At least one 8 characters</li>
+        </ul>
+      </div>
+    </section>
+    <div class="section2">
+      <i class="fa-regular fa-thumbs-up"></i>
+    </div>
+    <!--my jquery-->
+    <script src="./assets/jquery/jquery-3.6.1.min.js"></script>
+    <!--my js-->
+    <script>
+      let x1 = 0;
+      let x2 = 0;
+      let x3 = 0;
+      let x4 = 0;
+      let x5 = 0;
+      //////////////////////////////////////////
+      let lower = document.getElementById("lower");
+      let upper = document.getElementById("upper");
+      let number = document.getElementById("number");
+      let special = document.getElementById("special");
+      let eight = document.getElementById("eight");
+      ///////////////////////////////////////////
+      function test(data) {
+        const lowerch = new RegExp("(?=.*[A-Z])");
+        const upperch = new RegExp("(?=.*[a-z])");
+        const numberch = new RegExp("(?=.*[0-9])");
+        const eightnum = new RegExp("(?=.{8,})");
+        const special_char = new RegExp("(?=.*[!@#$%^&*])");
+        if (lowerch.test(data)) {
+          lower.classList.add("check");
+          x1 = 1;
+        } else {
+          lower.classList.remove("check");
+        }
+        if (upperch.test(data)) {
+          upper.classList.add("check");
+          x2 = 1;
+        } else {
+          upper.classList.remove("check");
+        }
+        if (numberch.test(data)) {
+          number.classList.add("check");
+          x3 = 1;
+        } else {
+          number.classList.remove("check");
+        }
+        if (eightnum.test(data)) {
+          eight.classList.add("check");
+          x4 = 1;
+        } else {
+          eight.classList.remove("check");
+        }
+        if (special_char.test(data)) {
+          special.classList.add("check");
+          x5 = 1;
+        } else {
+          special.classList.remove("check");
+        }
+      }
+    </script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

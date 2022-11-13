@@ -1,0 +1,199 @@
+:root {
+  --color1: #386a8b;
+}
+body {
+  background-color: #6c8697;
+}
+.load {
+  position: absolute;
+  background-color: #cbdfec;
+  z-index: -1;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.load .spinner-border {
+  width: 150px;
+  height: 150px;
+}
+.section1 {
+  display: block;
+  transition: all 2s;
+  width: 0;
+  height: 5px;
+  background-color: #3296d8;
+  overflow: hidden;
+}
+.section2 {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #78bfff;
+  flex-direction: column;
+  display: none;
+}
+
+.section2 i {
+  font-size: 200px;
+  color: #fff;
+  transform: rotate(330deg);
+}
+
+.body {
+  width: 50%;
+  height: auto;
+  background-color: var(--color1);
+  margin: 10px auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 15px 20px;
+}
+.body .div_user,
+.body .div_pass {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column;
+}
+.body .div_pass {
+  position: relative;
+}
+.body input {
+  border-radius: 10px;
+  outline: none;
+  border: 0px solid #3296d8;
+  padding: 2px 10px;
+  height: 40px;
+  width: 90%;
+  font-size: 17px;
+}
+.body input:focus {
+  border: 2px solid #04cf33;
+}
+.body .toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 40px;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+}
+.toggle:hover {
+  cursor: pointer;
+}
+.divbtn {
+  margin: 0px auto;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.divbtn button {
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 29px;
+  background-color: var(--color1);
+  border: 0px solid #00436f;
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: 2px 5px #165279;
+  transition: all 0.3s;
+  margin-bottom: 5px;
+}
+.divbtn .cli:active {
+  box-shadow: 0 0 #fff;
+  transform: translateY(1px);
+}
+#alt1,
+#alt2 {
+  border-radius: 10px;
+  width: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+  height: 0;
+  transition: all 1s;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+}
+.req {
+  width: 50%;
+  height: auto;
+  background-color: var(--color1);
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 10px 29px;
+  transition: all 2s;
+  overflow: hidden;
+}
+.req ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+.req ul li {
+  position: relative;
+  font-size: 20px;
+  transition: all 3s;
+  font-weight: 600;
+  color: white;
+  margin: 6px 0px;
+  margin-left: 10px;
+}
+.req ul li::before {
+  content: "\f192";
+  font-family: fontawesome;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  color: #ff3737;
+  margin: 0px -5px;
+}
+.req ul .check {
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+.req ul .check::before {
+  content: "\f00c";
+  font-family: fontawesome;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  color: #3aff00;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width: 992px) {
+  .body .toggle {
+    right: 25px;
+  }
+}
+@media (max-width: 786px) {
+  .body,
+  .req,
+  .divbtn {
+    width: 90%;
+  }
+  .req ul li {
+    font-size: 17px;
+  }
+}
